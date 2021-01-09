@@ -51,7 +51,7 @@ def find_bad_urls(urls):
     return bad_urls
 
 @click.command()
-@click.option('--file_location', help='Number of greetings.')
+@click.option('--file_location', help='location of file')
 def main(file_location:str):
     if file_location.endswith(".txt"):
         bad_urls = find_bad_urls(find_urls(txt_extract_text(file_location)))

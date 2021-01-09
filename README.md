@@ -1,6 +1,6 @@
-# FBL(File/Fuck broken links)
+# FBL(Find/File broken links)
 
-FBL is tool to find bad links in articles and files
+FBL is tool to find broken links in articles and files
 
 
 
@@ -27,6 +27,7 @@ fbl --file_location my.pdf
 ```bash
 git clone https://github.com/mr-tafreshi/fbl
 cd fbl
+pip3 install -r requirements.txt 
 python3 main.py ---file_location my.pdf
 ```
 
