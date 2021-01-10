@@ -6,6 +6,9 @@ import click
 # a regular expression of URLs
 url_regex = r"https?:\/\/(www\.)?[-a-zA-Z0-9@:%._\+~#=\n]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()@:%_\+.~#?&//=]*)"
 
+def print_err(err):
+    print('\033[31m {} \033[0m'.format(err))
+
 def txt_get_text():
     pass
 
@@ -53,22 +56,31 @@ def find_bad_urls(urls):
 @click.command()
 @click.option('--file_location', help='location of file')
 def main(file_location:str):
-    if file_location.endswith(".txt"):
-        bad_urls = find_bad_urls(find_urls(txt_extract_text(file_location)))
+    try :
+        f = open(file_location, 'r')
+        f.close()
+        if file_location.endswith(".txt"):
+            bad_urls = find_bad_urls(find_urls(txt_extract_text(file_location)))
 
-    elif file_location.endswith(".pdf"):
-        bad_urls = find_bad_urls(find_urls(pdf_extract_text(file_location)))
+        elif file_location.endswith(".pdf"):
+            bad_urls = find_bad_urls(find_urls(pdf_extract_text(file_location)))
 
-    elif file_location.endswith(".docx"):
-        bad_urls = find_bad_urls(find_urls(docx_extract_text(file_location)))
+        elif file_location.endswith(".docx"):
+            bad_urls = find_bad_urls(find_urls(docx_extract_text(file_location)))
 
-    elif file_location.endswith(".md"):
-        bad_urls = find_bad_urls(find_urls(md_extract_text(file_location)))
+        elif file_location.endswith(".md"):
+            bad_urls = find_bad_urls(find_urls(md_extract_text(file_location)))
 
-    for bad_url in bad_urls:
-        print(bad_url)
+        for bad_url in bad_urls:
+            print(bad_url)
 
-    print("[*] Total of bad urls:", len(bad_urls))
+        print("[*] Total of bad urls:", len(bad_urls))
+
+    except FileNotFoundError as exception:
+        print_err('File[{}] does not exist: {}'.format(file_location, exception))
+
+    except IOError as exception :
+        print_err('File[{}] is not accessible: {}'.format(file_location, exception))
 
 
 if __name__ == '__main__':
