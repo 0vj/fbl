@@ -55,7 +55,7 @@ def find_bad_urls(urls):
 
 def main():
     parser = argparse.ArgumentParser()
-    parser.add_argument("f", "--file_location", help="File location", required=True)
+    parser.add_argument("-f", "--file_location", help="File location", required=True)
     file_location = parser.parse_args().file_location
     try :
         f = open(file_location, 'r')
