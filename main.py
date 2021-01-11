@@ -1,7 +1,7 @@
 import fitz
 import re
 import requests
-import click
+import argparse
 
 # a regular expression of URLs
 url_regex = r"https?:\/\/(www\.)?[-a-zA-Z0-9@:%._\+~#=\n]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()@:%_\+.~#?&//=]*)"
@@ -53,9 +53,10 @@ def find_bad_urls(urls):
             continue
     return bad_urls
 
-@click.command()
-@click.option('--file_location', help='location of file')
-def main(file_location:str):
+def main():
+    parser = argparse.ArgumentParser()
+    parser.add_argument("f", "--file_location", help="File location", required=True)
+    file_location = parser.parse_args().file_location
     try :
         f = open(file_location, 'r')
         f.close()
