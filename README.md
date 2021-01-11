@@ -27,8 +27,8 @@ fbl --file_location my.pdf
 ```bash
 git clone https://github.com/mr-tafreshi/fbl
 cd fbl
-pip3 install -r requirements.txt 
-python3 main.py ---file_location my.pdf
+pip3 install -e . 
+fbl ---file_location my.pdf
 ```
 
 
