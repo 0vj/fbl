@@ -74,6 +74,9 @@ def main():
         elif file_location.endswith(".md"):
             bad_urls = find_bad_urls(find_urls(md_extract_text(file_location)))
 
+        else :
+            print("That file type is not supported")
+
         for bad_url in bad_urls:
             print(bad_url)
 
