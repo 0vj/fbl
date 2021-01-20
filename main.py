@@ -9,8 +9,10 @@ url_regex = r"https?:\/\/(www\.)?[-a-zA-Z0-9@:%._\+~#=\n]{1,256}\.[a-zA-Z0-9()]{
 def print_err(err):
     print('\033[31m {} \033[0m'.format(err))
 
-def txt_get_text():
-    pass
+def txt_extract_text(file_location:str):
+    with open(file_location) as txt:
+         text = txt.read()
+    return text
 
 #extract raw text from pdf
 def pdf_extract_text(file_location:str):
