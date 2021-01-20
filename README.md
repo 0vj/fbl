@@ -35,7 +35,7 @@ fbl ---file_location my.pdf
 
 ### TODO
 
-- [ ] .txt support
+- [x] .txt support
 
 - [x] .pdf support
 - [ ] Mark Down Support
