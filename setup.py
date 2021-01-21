@@ -5,7 +5,7 @@ with open("README.md", "r", encoding="utf-8") as fh:
 
 setuptools.setup(
     name="fbl",
-    version="0.0.3",
+    version="0.3.0",
     author="Amirmahdi Tafreshi",
     install_requires=["certifi==2020.12.5",
                      "chardet==4.0.0",
@@ -20,7 +20,7 @@ setuptools.setup(
     url="https://github.com/mr-tafreshi/fbl",
     packages=setuptools.find_packages(),
     entry_points={
-        "console_scripts": ["fbl = main:main"],
+        "console_scripts": ["fbl = fbl.__main__:main"],
     },
     classifiers=[
         "Programming Language :: Python :: 3",
