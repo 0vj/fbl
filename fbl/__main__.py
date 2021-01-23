@@ -2,6 +2,7 @@ import fitz
 import re
 import requests
 import argparse
+import docx
 
 # a regular expression of URLs
 url_regex = r"https?:\/\/(www\.)?[-a-zA-Z0-9@:%._\+~#=\n]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()@:%_\+.~#?&//=]*)"
@@ -25,8 +26,13 @@ def pdf_extract_text(file_location:str):
     return text
 
 #extract text of docx file
-def docx_extract_text():
-    pass
+def docx_extract_text(file_location:str):
+    docx = docx.Document(file_location)
+    text = ""
+    for paragraph in docx.paragraphs:
+        text += paragraphs.text
+    return text
+
 
 #extract text of Mark down file
 def md_extract_text():
