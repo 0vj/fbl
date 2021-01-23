@@ -5,14 +5,16 @@ with open("README.md", "r", encoding="utf-8") as fh:
 
 setuptools.setup(
     name="fbl",
-    version="0.3.0",
+    version="0.4.0",
     author="Amirmahdi Tafreshi",
     install_requires=["certifi==2020.12.5",
                      "chardet==4.0.0",
                      "idna==2.10",
+                     "lxml==4.6.2",
                      "PyMuPDF==1.18.6",
+                     "python-docx==0.8.10",
                      "requests==2.25.1",
-                     "urllib3==1.26.2"],
+                     "urllib3==1.26.2"]
     author_email="a.tafreshi440@gmail.com",
     description="FBL is tool to find broken links in articles and files",
     long_description=long_description,
