@@ -39,4 +39,4 @@ fbl ---file_location my.pdf
 
 - [x] .pdf support
 - [ ] Mark Down Support
-- [ ] docx support
+- [x] docx support
