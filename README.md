@@ -40,3 +40,7 @@ fbl ---file_location my.pdf
 - [x] .pdf support
 - [ ] Mark Down Support
 - [x] docx support
+- [ ] .odt support
+- [ ] .htm and .html support
+- [ ] .XLS and XLSX support
+- [ ] .PPT and .PPTX support
