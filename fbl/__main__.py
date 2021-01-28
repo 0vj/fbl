@@ -54,7 +54,7 @@ def find_bad_urls(urls):
     for url in urls:
         try :
             r = requests.get(url)
-            if r.status_code != 200 :
+            if not r.ok :
                 bad_urls.append(url)
         except :
             bad_urls.append(url)
