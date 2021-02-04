@@ -5,7 +5,7 @@ with open("README.md", "r", encoding="utf-8") as fh:
 
 setuptools.setup(
     name="fbl",
-    version="0.5.0",
+    version="0.6.0",
     author="Amirmahdi Tafreshi",
     install_requires=["certifi==2020.12.5",
                      "chardet==4.0.0",
