@@ -10,7 +10,7 @@ url_regex = r"https?:\/\/(www\.)?[-a-zA-Z0-9@:%._\+~#=\n]{1,256}\.[a-zA-Z0-9()]{
 def print_err(err):
     print('\033[31m {} \033[0m'.format(err))
 
-def txt_extract_text(file_location:str):
+def txtfamily_extract_text(file_location:str):
     with open(file_location) as txt:
          text = txt.read()
     return text
@@ -68,8 +68,9 @@ def main():
     try :
         f = open(file_location, 'r')
         f.close()
-        if file_location.endswith(".txt"):
-            bad_urls = find_bad_urls(find_urls(txt_extract_text(file_location)))
+        #if txt family files
+        if file_location.endswith(".txt", ".htm", ".html"):
+            bad_urls = find_bad_urls(find_urls(txtfamily_extract_text(file_location)))
 
         elif file_location.endswith(".pdf"):
             bad_urls = find_bad_urls(find_urls(pdf_extract_text(file_location)))
