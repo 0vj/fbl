@@ -38,7 +38,7 @@ fbl ---file_location my.pdf
 - [x] .txt support
 
 - [x] .pdf support
-- [ ] Mark Down Support
+- [x] Mark Down Support
 - [x] docx support
 - [ ] .odt support
 - [x] .htm and .html support
