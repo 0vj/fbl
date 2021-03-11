@@ -3,6 +3,7 @@ import re
 import requests
 import argparse
 import docx
+from ODTtoText import odtToText
 
 # a regular expression of URLs
 url_regex = r"https?:\/\/(www\.)?[-a-zA-Z0-9@:%._\+~#=\n]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()@:%_\+.~#?&//=]*)"
@@ -37,7 +38,6 @@ def docx_extract_text(file_location:str):
 #extract text of Mark down file
 def md_extract_text():
     pass
-
 
 # extract all urls using the regular expression
 def find_urls(text:str):
@@ -80,6 +80,9 @@ def main():
 
         elif file_location.endswith(".md"):
             bad_urls = find_bad_urls(find_urls(md_extract_text(file_location)))
+
+        elif file_location.endswith(".odt"):
+            bad_urls = find_bad_urls(find_urls(odtToText(file_location)))
 
         else :
             print("That file type is not supported")
