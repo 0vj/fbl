@@ -5,4 +5,4 @@ lxml==4.6.2
 PyMuPDF==1.18.9
 python-docx==0.8.10
 requests==2.25.1
-urllib3==1.26.3
+urllib3=1.26.4
