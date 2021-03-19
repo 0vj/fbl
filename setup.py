@@ -14,7 +14,7 @@ setuptools.setup(
                      "PyMuPDF==1.18.6",
                      "python-docx==0.8.10",
                      "requests==2.25.1",
-                     "urllib3==1.26.2"],
+                     "urllib3==1.26.4"],
     author_email="a.tafreshi440@gmail.com",
     description="FBL is tool to find broken links in articles and files",
     long_description=long_description,
