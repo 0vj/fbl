@@ -5,7 +5,7 @@ FBL is tool to find broken links in articles and files
 ![issues](https://img.shields.io/github/issues/mr-tafreshi/fbl)
 ![repo size](https://img.shields.io/github/repo-size/mr-tafreshi/fbl)
 ![license](https://img.shields.io/github/license/mr-tafreshi/fbl)
-![stars](https://img.shields.io/github/stars/mr-tafreshi/fbl)
+![stars](https://img.shields.io/github/stars/mr-tafreshi/fbl?label=Stars&logo=github)
 
 ## how it works
 
