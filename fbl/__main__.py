@@ -69,11 +69,10 @@ def main():
         f = open(file_location, 'r')
         f.close()
         #if txt family files
-        for file_format in [".txt", ".htm", ".html", ".md"]:
-            if file_location.endswith(file_format):
-                bad_urls = find_bad_urls(find_urls(txtfamily_extract_text(file_location)))
+        if file_location.endswith((".txt", ".htm", ".html", ".md")):
+            bad_urls = find_bad_urls(find_urls(txtfamily_extract_text(file_location)))
 
-        if file_location.endswith(".pdf"):
+        elif file_location.endswith(".pdf"):
             bad_urls = find_bad_urls(find_urls(pdf_extract_text(file_location)))
 
         elif file_location.endswith(".docx"):
