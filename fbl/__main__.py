@@ -41,10 +41,7 @@ def md_extract_text():
 
 # extract all urls using the regular expression
 def find_urls(text:str):
-    urls = []
-    for match in re.finditer(url_regex, text):
-        url = match.group()
-        urls.append(url)
+    urls = [match.group() for match in re.finditer(url_regex, text)]
     print("urls :", urls)
     return urls
 
