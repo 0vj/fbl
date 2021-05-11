@@ -8,9 +8,21 @@ FBL is tool to find broken links in articles and files
 ![stars](https://img.shields.io/github/stars/mr-tafreshi/fbl?label=Stars&logo=github)
 
 
+---
+
+
 ## how it works
 
 FBL finds all the links and checks them all. Any broken link will be displayed to you
+
+
+## Things tou need in your system
+
+- Python
+- Pip
+- Git
+
+> Git is not required if you are installing with **pip**
 
 
 ## How to install
@@ -39,6 +51,7 @@ Run this command in your terminal or CMD :
 fbl --file_location my.pdf
 ```
 
+---
 
 ### TODO
 
