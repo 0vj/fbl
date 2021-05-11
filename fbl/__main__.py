@@ -28,10 +28,10 @@ def pdf_extract_text(file_location:str):
 
 #extract text of docx file
 def docx_extract_text(file_location:str):
-    docx = docx.Document(file_location)
+    docx_file = docx.Document(file_location)
     text = ""
-    for paragraph in docx.paragraphs:
-        text += paragraphs.text
+    for paragraph in docx_file.paragraphs:
+        text += paragraph.text
     return text
 
 
@@ -69,10 +69,11 @@ def main():
         f = open(file_location, 'r')
         f.close()
         #if txt family files
-        if file_location.endswith(".txt", ".htm", ".html", ".md"):
-            bad_urls = find_bad_urls(find_urls(txtfamily_extract_text(file_location)))
+        for file_fromat in [".txt", ".htm", ".html", ".md"]
+            if file_location.endswith(file_format):
+                bad_urls = find_bad_urls(find_urls(txtfamily_extract_text(file_location)))
 
-        elif file_location.endswith(".pdf"):
+        if file_location.endswith(".pdf"):
             bad_urls = find_bad_urls(find_urls(pdf_extract_text(file_location)))
 
         elif file_location.endswith(".docx"):
