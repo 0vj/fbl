@@ -7,10 +7,40 @@ FBL is tool to find broken links in articles and files
 ![license](https://img.shields.io/github/license/mr-tafreshi/fbl)
 ![stars](https://img.shields.io/github/stars/mr-tafreshi/fbl?label=Stars&logo=github)
 
+
+---
+
+
 ## how it works
 
 FBL finds all the links and checks them all. Any broken link will be displayed to you
 
+
+## Things tou need in your system
+
+- Python
+- Pip
+- Git
+
+> Git is not required if you are installing with **pip**
+
+
+## How to install
+
+- Installing via **pip** :
+
+```bash 
+pip3 install fbl
+```
+
+**or**
+
+- Get the last update via **git** :
+
+```bash
+git clone https://github.com/mr-tafreshi/fbl && cd fbl
+pip3 install -e . 
+```
 
 
 ## How to run
@@ -18,23 +48,10 @@ FBL finds all the links and checks them all. Any broken link will be displayed t
 Run this command in your terminal or CMD :
 
 ```bash 
-pip3 install fbl
-
 fbl --file_location my.pdf
 ```
 
-**or**
-
-1. Install `python3` and `git` on your system
-
-```bash
-git clone https://github.com/mr-tafreshi/fbl
-cd fbl
-pip3 install -e . 
-fbl ---file_location my.pdf
-```
-
-
+---
 
 ### TODO
 
