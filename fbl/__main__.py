@@ -34,11 +34,6 @@ def docx_extract_text(file_location:str):
         text += paragraph.text
     return text
 
-
-#extract text of Mark down file
-def md_extract_text():
-    pass
-
 # extract all urls using the regular expression
 def find_urls(text:str):
     urls = [match.group() for match in re.finditer(url_regex, text)]
