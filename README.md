@@ -16,7 +16,7 @@ FBL is tool to find broken links in articles and files
 FBL finds all the links and checks them all. Any broken link will be displayed to you
 
 
-## Things tou need in your system
+## Things you need in your system
 
 - Python
 - Pip
