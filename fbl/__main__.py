@@ -4,12 +4,13 @@ import fitz
 import requests
 import docx
 from ODTtoText import odtToText
+import logging 
 
 # a regular expression of URLs
 URL_REGEX = r"https?:\/\/(www\.)?[-a-zA-Z0-9@:%._\+~#=\n]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()@:%_\+.~#?&//=]*)"
 
-def print_err(err):
-    print('\033[31m {} \033[0m'.format(err))
+def log_err(err):
+    logging.error('\033[31m {} \033[0m'.format(err))
 
 def txtfamily_extract_text(file_location:str) -> str:
     with open(file_location) as txt:
@@ -38,7 +39,7 @@ def docx_extract_text(file_location:str) -> str:
 def find_urls(text:str) -> list:
     urls = [match.group() for match in re.finditer(URL_REGEX, text)]
     print("\033[1;49;34m->\033[0m \033[1mURLs found:\033[0m\n", '\n'.join(urls))
-    #print("=======================================")
+    print("=======================================")
     return urls
 
 #request to urls and check them
@@ -89,10 +90,10 @@ def main():
         print("\n\033[1m[*] Total of bad urls: \033[0m", "\033[31m"+str(len(bad_urls))+"\033[0m")
 
     except FileNotFoundError as exception:
-        print_err('File[{}] does not exist: {}'.format(file_location, exception))
+        log_err('File[{}] does not exist: {}'.format(file_location, exception))
 
     except IOError as exception :
-        print_err('File[{}] is not accessible: {}'.format(file_location, exception))
+        log_err('File[{}] is not accessible: {}'.format(file_location, exception))
 
 
 if __name__ == '__main__':
