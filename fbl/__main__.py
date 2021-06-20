@@ -81,7 +81,7 @@ def main():
             bad_urls = find_bad_urls(find_urls(odtToText(file_location)))
 
         else :
-            print_err("That file type is not supported")
+            log_err("That file type is not supported")
 
         print("=======================================")
 
