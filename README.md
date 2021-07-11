@@ -62,7 +62,7 @@ fbl --file_location my.pdf
 - [x] docx support
 - [x] .odt support
 - [x] .htm and .html support
-- [ ] Directory support
+- [x] Directory support
 - [ ] .XLS and XLSX support
 - [ ] .PPT and .PPTX support
 - [ ] Add GUI version
