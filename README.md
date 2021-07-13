@@ -48,7 +48,7 @@ pip3 install -e .
 Run this command in your terminal or CMD :
 
 ```bash 
-fbl --file_location my.pdf
+fbl --file my.pdf
 ```
 
 ---
