@@ -10,7 +10,7 @@ setuptools.setup(
     install_requires=["certifi==2020.12.5",
                      "chardet==4.0.0",
                      "idna==2.10",
-                     "lxml==4.6.3",
+                     "lxml==4.6.5",
                      "PyMuPDF==1.18.6",
                      "python-docx==0.8.10",
                      "requests==2.25.1",
