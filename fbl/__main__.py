@@ -69,21 +69,18 @@ def find_bad_urls(urls: list) -> list:
 
 
 def checkfile(file_location: str):
-    if file_location.endswith((".txt", ".htm", ".html", ".md")):
-        bad_urls = find_bad_urls(find_urls(txtfamily_extract_text(file_location)))
-
-    elif file_location.endswith(".pdf"):
-        bad_urls = find_bad_urls(find_urls(pdf_extract_text(file_location)))
-
-    elif file_location.endswith(".docx"):
-        bad_urls = find_bad_urls(find_urls(docx_extract_text(file_location)))
-
-    elif file_location.endswith(".odt"):
-        bad_urls = find_bad_urls(find_urls(odtToText(file_location)))
-
+    suffix_functions = {"txt": txtfamily_extract_text,
+                "htm" : txtfamily_extract_text,
+                "html" : txtfamily_extract_text,
+                "md": txtfamily_extract_text,
+                "pdf": pdf_extract_text,
+                "docx": docx_extract_text,
+                "odt": odtToText}
+    if file_location.endswith(tuple(suffix_functions.keys())):
+        bad_urls = find_bad_urls(find_urls(suffix_functions[file_location.split(".")[1]](file_location)))
     else:
         log_err("That file type is not supported")
-
+    
     print("=======================================")
     print('\033[31m->\033[0m \033[1mBad URLs:\033[0m', "\n".join(bad_urls))
     print("\n\033[1m[*] Total of bad urls: \033[0m", "\033[31m"+str(len(bad_urls))+"\033[0m")
