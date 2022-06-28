@@ -63,6 +63,6 @@ fbl --file my.pdf
 - [x] .odt support
 - [x] .htm and .html support
 - [x] Directory support
-- [ ] .XLS and XLSX support
+- [x] .XLS and XLSX support
 - [ ] .PPT and .PPTX support
 - [ ] Add GUI version
