@@ -6,6 +6,7 @@ import docx
 from ODTtoText import odtToText
 import logging
 import os
+import pandas as pd
 
 # a regular expression of URLs
 URL_REGEX = r"https?:\/\/(www\.)?[-a-zA-Z0-9@:%._\+~#=\n]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()@:%_\+.~#?&//=]*)"
@@ -20,6 +21,17 @@ def txtfamily_extract_text(file_location: str) -> str:
         text = txt.read()
     return text
 
+# Extract complete text from Excel files
+def xls_extract_text(file_location: str) -> str:
+    # Open the Excel file
+    with pd.read_excel(file_location)as df:
+        text = ""
+        # Extract text of each Excel cells
+        for i in range(df.shape[0]): 
+            for j in range(df.shape[1]): 
+                text += str(df.at[i, j])
+                text+= ' ' # To seperate possible domain cells from strings
+    return text
 
 # Extract raw text from pdf
 def pdf_extract_text(file_location: str) -> str:
@@ -75,7 +87,9 @@ def checkfile(file_location: str):
                 "md": txtfamily_extract_text,
                 "pdf": pdf_extract_text,
                 "docx": docx_extract_text,
-                "odt": odtToText}
+                "odt": odtToText,
+                "xls": xls_extract_text,
+                "xlsx": xls_extract_text}
     if file_location.endswith(tuple(suffix_functions.keys())):
         bad_urls = find_bad_urls(find_urls(suffix_functions[file_location.split(".")[1]](file_location)))
     else:
