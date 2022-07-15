@@ -1,6 +1,5 @@
 import argparse
 import re
-import fitz
 import requests
 import docx
 from ODTtoText import odtToText
@@ -20,7 +19,7 @@ def txtfamily_extract_text(file_location: str) -> str:
         text = txt.read()
     return text
 
-
+"""
 # Extract raw text from pdf
 def pdf_extract_text(file_location: str) -> str:
     # Open the PDF file
@@ -30,7 +29,7 @@ def pdf_extract_text(file_location: str) -> str:
             # Extract text of each PDF page
             text += page.getText()
     return text
-
+"""
 
 # Extract text of docx file
 def docx_extract_text(file_location: str) -> str:
@@ -73,7 +72,7 @@ def checkfile(file_location: str):
                 "htm" : txtfamily_extract_text,
                 "html" : txtfamily_extract_text,
                 "md": txtfamily_extract_text,
-                "pdf": pdf_extract_text,
+                #"pdf": pdf_extract_text,
                 "docx": docx_extract_text,
                 "odt": odtToText}
     if file_location.endswith(tuple(suffix_functions.keys())):
