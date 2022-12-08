@@ -7,7 +7,7 @@ setuptools.setup(
     name="fbl",
     version="0.9.2",
     author="Amirmahdi Tafreshi",
-    install_requires=["certifi==2020.12.5",
+    install_requires=["certifi==2022.12.7",
                      "chardet==4.0.0",
                      "idna==2.10",
                      "lxml==4.9.1",
