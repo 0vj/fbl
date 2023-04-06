@@ -76,7 +76,7 @@ def checkfile(file_location: str):
                 "docx": docx_extract_text,
                 "odt": odtToText}
     if file_location.endswith(tuple(suffix_functions.keys())):
-        bad_urls = find_bad_urls(find_urls(suffix_functions[file_location.split(".")[1]](file_location)))
+        bad_urls = find_bad_urls(find_urls(suffix_functions[os.path.splitext(file_location)[1]](file_location)))
     else:
         log_err("That file type is not supported")
     
