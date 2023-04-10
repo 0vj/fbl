@@ -106,7 +106,7 @@ def main():
     parser.add_argument("-f", "--file", help="The location of the file to be checked")
     parser.add_argument("-d", "--directory", help="Directory location")
     args = parser.parse_args()
-    if not (args.file or args.directory) or (args.file and arge.directory):
+    if not (args.file or args.directory) or (args.file and args.directory):
         parser.error('One of --file or --directory must be given')
 
     elif args.file:
